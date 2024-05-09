@@ -1,6 +1,5 @@
 package com.example.demo.services;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +17,15 @@ public class TrekkService {
     @Autowired
     TrekkRepository trepo;
 
-   public Trekk saveTrekk(Trekk trekk){
-    return trepo.save(trekk);
-   }
-   
-   public List<Trekk> getAllTrekk(){
-    return trepo.findAll();
-   }
+    public Trekk saveTrekk(Trekk trekk) {
+        return trepo.save(trekk);
+    }
+
+    public List<Trekk> getAllTrekk() {
+        return trepo.findAll();
+    }
+
+    public void deleteTrekk(int id) {
+       trepo.deleteById(id);
+    }
 }
