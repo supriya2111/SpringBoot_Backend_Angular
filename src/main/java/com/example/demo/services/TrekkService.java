@@ -28,4 +28,8 @@ public class TrekkService {
     public void deleteTrekk(int id) {
        trepo.deleteById(id);
     }
+
+    public Trekk getTrekk(int id){
+        return trepo.getTrekkById(id);
+    }
 }
