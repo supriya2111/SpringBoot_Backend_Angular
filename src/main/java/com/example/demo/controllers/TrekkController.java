@@ -35,7 +35,7 @@ public class TrekkController {
         return tservice.getAllTrekk();
     }
     
-     @DeleteMapping("/deleteTrekk")
+     @DeleteMapping("/trekks")
     public void deleteTrekk(@RequestParam("id") int id)
     {
     	tservice.deleteTrekk(id);
