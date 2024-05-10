@@ -35,19 +35,30 @@ public class TrekkController {
         return tservice.getAllTrekk();
     }
     
-    @DeleteMapping("/trekks")
-    public void deleteTrekk(@RequestParam("id") int id)
-    {
-    	tservice.deleteTrekk(id);
-    }
+    // @DeleteMapping("/trekks")
+    // public void deleteTrekk(@RequestParam("id") int id)
+    // {
+    // 	tservice.deleteTrekk(id);
+    // }
+
+
+    // @GetMapping("/trekks/{id}")
+    // public Trekk getTrekk(@PathVariable int id) {
+    //    return tservice.getTrekk(id);
+    // }
+    
+    // @GetMapping("/trekks/update/{id}")
+    // public Trekk getTrekkforUpdate(@PathVariable int id) {
+    //    return tservice.getTrekk(id);
+    // }
 
     @GetMapping("/trekks/{id}")
-    public Trekk getTrekk(@PathVariable int id) {
+    public Trekk getTrekk(@PathVariable String id) {
        return tservice.getTrekk(id);
     }
     
     @GetMapping("/trekks/update/{id}")
-    public Trekk getTrekkforUpdate(@PathVariable int id) {
+    public Trekk getTrekkforUpdate(@PathVariable String id) {
        return tservice.getTrekk(id);
     }
     

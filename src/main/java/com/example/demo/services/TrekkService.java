@@ -25,11 +25,15 @@ public class TrekkService {
         return trepo.findAll();
     }
 
-    public void deleteTrekk(int id) {
-       trepo.deleteById(id);
-    }
+    // public void deleteTrekk(int id) {
+    //    trepo.deleteById(id);
+    // }
 
-    public Trekk getTrekk(int id){
+    // public Trekk getTrekk(int id){
+    //     return trepo.getTrekkById(id);
+    // }
+    
+    public Trekk getTrekk(String id){
         return trepo.getTrekkById(id);
     }
 }
