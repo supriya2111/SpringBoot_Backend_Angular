@@ -25,15 +25,29 @@ public class TrekkService {
         return trepo.findAll();
     }
 
-    // public void deleteTrekk(int id) {
+    public void deleteTrekk(int id) {
+        trepo.deleteById(id);
+     }
+
+    // public void deleteTrekk(String id) {
     //    trepo.deleteById(id);
     // }
 
-    // public Trekk getTrekk(int id){
+    public Trekk getTrekk(int id){
+        return trepo.getTrekkById(id);
+    }
+
+    // public Trekk getTrekk(String id){
     //     return trepo.getTrekkById(id);
     // }
-    
-    public Trekk getTrekk(String id){
-        return trepo.getTrekkById(id);
+
+    public int updateTrekk(Trekk trekk){
+        int rows= trepo.updateTrekkDataById(trekk.getId(), trekk.getTrekkName(),trekk.getTrekkingPoint(),trekk.getCity(),trekk.getPickupPoint(),trekk.getTrekkDate(),trekk.getCharges(),trekk.getImage());
+        if(rows == 0){
+            return -1;
+        }
+        else{
+            return rows;
+        }
     }
 }

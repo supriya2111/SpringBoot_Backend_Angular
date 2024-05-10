@@ -13,17 +13,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-// @Entity
-// @Table(name="trekk")
-
+@Entity
+@Table(name="trekk")
 @Data
-@Document(collection ="trekk")
+// @Document(collection ="trekk")
 public class Trekk {
   
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // int id;
-    String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id;
+   // String id;
 
     public Trekk(){
 

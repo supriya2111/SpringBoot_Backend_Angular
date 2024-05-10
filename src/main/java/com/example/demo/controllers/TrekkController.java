@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.Trekk;
 import com.example.demo.services.TrekkService;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 
@@ -34,32 +36,44 @@ public class TrekkController {
     public List<Trekk> getAllTrekks() {
         return tservice.getAllTrekk();
     }
-    
+
+    @DeleteMapping("/trekks")
+    public void deleteTrekk(@RequestParam("id") int id)
+    {
+    	tservice.deleteTrekk(id);
+    } 
+
     // @DeleteMapping("/trekks")
-    // public void deleteTrekk(@RequestParam("id") int id)
+    // public void deleteTrekk(@RequestParam("id") String id)
     // {
     // 	tservice.deleteTrekk(id);
     // }
 
 
-    // @GetMapping("/trekks/{id}")
-    // public Trekk getTrekk(@PathVariable int id) {
-    //    return tservice.getTrekk(id);
-    // }
-    
-    // @GetMapping("/trekks/update/{id}")
-    // public Trekk getTrekkforUpdate(@PathVariable int id) {
-    //    return tservice.getTrekk(id);
-    // }
-
     @GetMapping("/trekks/{id}")
-    public Trekk getTrekk(@PathVariable String id) {
+    public Trekk getTrekk(@PathVariable int id) {
        return tservice.getTrekk(id);
     }
     
     @GetMapping("/trekks/update/{id}")
-    public Trekk getTrekkforUpdate(@PathVariable String id) {
+    public Trekk getTrekkforUpdate(@PathVariable int id) {
        return tservice.getTrekk(id);
     }
+
+    // @GetMapping("/trekks/{id}")
+    // public Trekk getTrekk(@PathVariable String id) {
+    //    return tservice.getTrekk(id);
+    // }
+    
+    // @GetMapping("/trekks/update/{id}")
+    // public Trekk getTrekkforUpdate(@PathVariable String id) {
+    //    return tservice.getTrekk(id);
+    // }
+
+    @PutMapping("/trekks/update")
+    public int  updateTrekk(@PathVariable String id, @RequestBody Trekk trekk) {
+       return tservice.updateTrekk(trekk);
+    }
+
     
 }
