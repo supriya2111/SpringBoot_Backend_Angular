@@ -18,7 +18,7 @@ public class UserService {
 
     public User validateUser(String username,String password){
       
-		User user =  urepo.findByUsernameandpassword(username, password);
+		User user =  urepo.findByUsernameAndPassword(username, password);
 	
 		
 		if (user == null || !user.getPassword().equals(password)) {

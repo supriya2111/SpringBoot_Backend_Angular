@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,14 +10,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-@Entity
-@Table(name="user")
-@Data
+/**
+ *
+ * @author Supriya
+ */
+// @Entity
+// @Table(name="user")
+ @Data
+ @Document(collection="user")
 public class User {
  
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int userid;
+  //  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  //  int userid;
+    String id;
 
     @Column
     String firstname;

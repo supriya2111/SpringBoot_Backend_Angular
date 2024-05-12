@@ -14,24 +14,24 @@ import java.util.List;
 
 
 @Repository
-@Transactional
-public interface TrekkRepository extends JpaRepository<Trekk, Integer>{
+// @Transactional
+// public interface TrekkRepository extends JpaRepository<Trekk, Integer>{
 
-    @Query("select t from Trekk t where id =:id")			
-    public Trekk  getTrekkById(int id);
+//     @Query("select t from Trekk t where id =:id")			
+//     public Trekk  getTrekkById(int id);
 
-      @Modifying
-      @Query("UPDATE Trekk t SET t.trekkName = :trekkName, t.trekkingPoint = :trekkingPoint, t.city = :city, t.pickupPoint = :pickupPoint, t.trekkDate = :trekkDate, t.charges = :charges, t.image = :image WHERE t.id = :id")
-      public int updateTrekkDataById(int id, String trekkName, String trekkingPoint, String city, String pickupPoint, Date trekkDate, int charges, String image);
-}
-
-// public interface TrekkRepository extends MongoRepository<Trekk, String>{
-
-//     @Query("{_id : ?0}")
-//     Trekk getTrekkById(String id);
-
-//     @Modifying
-//     @Query("{$set: {trekkName : ?1, trekkingPoint : ?2, city : ?3, pickupPoint : ?4, trekkDate : ?5, charges : ?6, image : ?7}}")
-//     int updateTrekkData(String id, String trekkName, String trekkingPoint, String city, String pickupPoint, Date trekkDate, int charges, String image);
-
+//       @Modifying
+//       @Query("UPDATE Trekk t SET t.trekkName = :trekkName, t.trekkingPoint = :trekkingPoint, t.city = :city, t.pickupPoint = :pickupPoint, t.trekkDate = :trekkDate, t.charges = :charges, t.image = :image WHERE t.id = :id")
+//       public int updateTrekkDataById(int id, String trekkName, String trekkingPoint, String city, String pickupPoint, Date trekkDate, int charges, String image);
 // }
+
+public interface TrekkRepository extends MongoRepository<Trekk, String>{
+
+    @Query("{_id : ?0}")
+    Trekk getTrekkById(String id);
+
+    // @Modifying
+    // @Query("{$set: {trekkName : ?2, trekkingPoint : ?3, city : ?4, pickupPoint : ?5, trekkDate : ?6, charges : ?7, image : ?8}}")
+    // int updateTrekkData(String id, String trekkName, String trekkingPoint, String city, String pickupPoint, Date trekkDate, int charges, String image);
+
+}
