@@ -68,9 +68,7 @@ public class TrekkService {
             updatedtrekk.setCharges(trekk.getCharges());
             updatedtrekk.setImage(trekk.getImage());
             trepo.save(updatedtrekk);
-        } else {
-            // Handle case where document with the provided ID is not found
-        }
+        } 
     }
     
 }
