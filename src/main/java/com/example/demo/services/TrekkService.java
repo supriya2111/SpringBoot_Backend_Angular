@@ -8,9 +8,6 @@ import org.springframework.stereotype.Service;
 import com.example.demo.entities.Trekk;
 import com.example.demo.repositories.TrekkRepository;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-
 @Service
 public class TrekkService {
 

@@ -3,19 +3,16 @@ package com.example.demo.entities;
 
 import java.util.Date;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
 
 @Entity
 @Table(name="trekk")
-@Data
+// @Data
 // @Document(collection ="trekk")
 public class Trekk {
   
@@ -27,81 +24,81 @@ public class Trekk {
     public Trekk(){
 
     }
-    // public Trekk(int id, String trekkName, String trekkingPoint, String city, String pickupPoint, Date trekkDate,
-    //         int charges, String image) {
-    //     this.id = id;
-    //     this.trekkName = trekkName;
-    //     this.trekkingPoint = trekkingPoint;
-    //     this.city = city;
-    //     this.pickupPoint = pickupPoint;
-    //     this.trekkDate = trekkDate;
-    //     this.charges = charges;
-    //     this.image = image;
-    // }
+    public Trekk(int id, String trekkName, String trekkingPoint, String city, String pickupPoint, Date trekkDate,
+            int charges, String image) {
+        this.id = id;
+        this.trekkName = trekkName;
+        this.trekkingPoint = trekkingPoint;
+        this.city = city;
+        this.pickupPoint = pickupPoint;
+        this.trekkDate = trekkDate;
+        this.charges = charges;
+        this.image = image;
+    }
 
-    // public int getId() {
-    //     return id;
-    // }
+    public int getId() {
+        return id;
+    }
 
-    // public void setId(int id) {
-    //     this.id = id;
-    // }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    // public String getTrekkname() {
-    //     return trekkName;
-    // }
+    public String getTrekkName() {
+        return trekkName;
+    }
 
-    // public void setTrekkname(String trekkname) {
-    //     this.trekkName = trekkname;
-    // }
+    public void setTrekkname(String trekkName) {
+        this.trekkName = trekkName;
+    }
 
-    // public String getTrekkingPoint() {
-    //     return trekkingPoint;
-    // }
+    public String getTrekkingPoint() {
+        return trekkingPoint;
+    }
 
-    // public void setTrekkingPoint(String trekkingPoint) {
-    //     this.trekkingPoint = trekkingPoint;
-    // }
+    public void setTrekkingPoint(String trekkingPoint) {
+        this.trekkingPoint = trekkingPoint;
+    }
 
-    // public String getCity() {
-    //     return city;
-    // }
+    public String getCity() {
+        return city;
+    }
 
-    // public void setCity(String city) {
-    //     this.city = city;
-    // }
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-    // public String getPickupPoint() {
-    //     return pickupPoint;
-    // }
+    public String getPickupPoint() {
+        return pickupPoint;
+    }
 
-    // public void setPickupPoint(String pickupPoint) {
-    //     this.pickupPoint = pickupPoint;
-    // }
+    public void setPickupPoint(String pickupPoint) {
+        this.pickupPoint = pickupPoint;
+    }
 
-    // public Date getTrekkDate() {
-    //     return trekkDate;
-    // }
+    public Date getTrekkDate() {
+        return trekkDate;
+    }
 
-    // public void setTrekkDate(Date trekkDate) {
-    //     this.trekkDate = trekkDate;
-    // }
+    public void setTrekkDate(Date trekkDate) {
+        this.trekkDate = trekkDate;
+    }
 
-    // public int getCharges() {
-    //     return charges;
-    // }
+    public int getCharges() {
+        return charges;
+    }
 
-    // public void setCharges(int charges) {
-    //     this.charges = charges;
-    // }
+    public void setCharges(int charges) {
+        this.charges = charges;
+    }
 
-    // public String getImage() {
-    //     return image;
-    // }
+    public String getImage() {
+        return image;
+    }
 
-    // public void setImage(String image) {
-    //     this.image = image;
-    // }
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     @Column
     String trekkName;
