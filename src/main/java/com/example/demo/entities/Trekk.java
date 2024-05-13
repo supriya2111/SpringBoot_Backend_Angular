@@ -19,14 +19,41 @@ import lombok.Data;
 @Document(collection ="trekk")
 public class Trekk {
   
-    @Id
+   // @Id
    // @GeneratedValue(strategy = GenerationType.IDENTITY)
    // int id;
+
+    @Id
     String id;
+
+    
+    @Column
+    String trekkName;
+
+    @Column
+    String trekkingPoint;
+
+    @Column
+    String city;
+
+    @Column
+    String pickupPoint;
+
+    @Column 
+    Date trekkDate;
+
+    @Column 
+    int charges;
+
+    @Column
+    String image;
+
 
     public Trekk(){
 
     }
+
+    
     // public Trekk(int id, String trekkName, String trekkingPoint, String city, String pickupPoint, Date trekkDate,
     //         int charges, String image) {
     //     this.id = id;
@@ -103,25 +130,5 @@ public class Trekk {
     //     this.image = image;
     // }
 
-    @Column
-    String trekkName;
-
-    @Column
-    String trekkingPoint;
-
-    @Column
-    String city;
-
-    @Column
-    String pickupPoint;
-
-    @Column 
-    Date trekkDate;
-
-    @Column 
-    int charges;
-
-    @Column
-    String image;
 
 }

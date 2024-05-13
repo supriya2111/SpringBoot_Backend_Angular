@@ -20,9 +20,11 @@ import lombok.Data;
  @Document(collection="user")
 public class User {
  
+     //@Id
+     //  @GeneratedValue(strategy = GenerationType.IDENTITY)
+     //  int userid;
+
     @Id
-  //  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  //  int userid;
     String id;
 
     @Column

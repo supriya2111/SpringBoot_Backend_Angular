@@ -12,26 +12,26 @@ import com.example.demo.entities.Trekk;
 import java.util.Date;
 import java.util.List;
 
-
-@Repository
+////MySQL Repository
+//@Repository
 // @Transactional
 // public interface TrekkRepository extends JpaRepository<Trekk, Integer>{
 
-//     @Query("select t from Trekk t where id =:id")			
-//     public Trekk  getTrekkById(int id);
+        // Query for getting particular trekk
+//       @Query("select t from Trekk t where id =:id")			
+//       public Trekk  getTrekkById(int id);
 
+        //Query for updating particular trekk
 //       @Modifying
 //       @Query("UPDATE Trekk t SET t.trekkName = :trekkName, t.trekkingPoint = :trekkingPoint, t.city = :city, t.pickupPoint = :pickupPoint, t.trekkDate = :trekkDate, t.charges = :charges, t.image = :image WHERE t.id = :id")
 //       public int updateTrekkDataById(int id, String trekkName, String trekkingPoint, String city, String pickupPoint, Date trekkDate, int charges, String image);
 // }
 
+//MongoDB Repository
+@Repository
 public interface TrekkRepository extends MongoRepository<Trekk, String>{
 
     @Query("{_id : ?0}")
     Trekk getTrekkById(String id);
-
-    // @Modifying
-    // @Query("{$set: {trekkName : ?2, trekkingPoint : ?3, city : ?4, pickupPoint : ?5, trekkDate : ?6, charges : ?7, image : ?8}}")
-    // int updateTrekkData(String id, String trekkName, String trekkingPoint, String city, String pickupPoint, Date trekkDate, int charges, String image);
 
 }
