@@ -14,18 +14,18 @@ import lombok.Data;
  *
  * @author Supriya
  */
-// @Entity
-// @Table(name="user")
- @Data
- @Document(collection="user")
+@Entity
+@Table(name="user")
+@Data
+//  @Document(collection="user")
 public class User {
  
-     //@Id
-     //  @GeneratedValue(strategy = GenerationType.IDENTITY)
-     //  int userid;
+     @Id
+      @GeneratedValue(strategy = GenerationType.IDENTITY)
+      int userid;
 
-    @Id
-    String id;
+    // @Id
+    // String id;
 
     @Column
     String firstname;

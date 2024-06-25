@@ -33,52 +33,52 @@ public class TrekkService {
     }
 
     //For MySQL - Delete method
-    // public void deleteTrekk(int id) {
-    //     trepo.deleteById(id);
-    //  }
+    public void deleteTrekk(int id) {
+        trepo.deleteById(id);
+     }
 
     //For MongoDB -Delete method
-    public void deleteTrekk(String id) {
-       trepo.deleteById(id);
-    }
-
-    //For MySQL 
-    // public Trekk getTrekk(int id){
-    //     return trepo.getTrekkById(id);
+    // public void deleteTrekk(String id) {
+    //    trepo.deleteById(id);
     // }
 
-    //For MongoDB
-    public Trekk getTrekk(String id){
+   // For MySQL 
+    public Trekk getTrekk(int id){
         return trepo.getTrekkById(id);
     }
 
-    //For MySQL - update method
-    // public int updateTrekk(Trekk trekk){
-    //     int rows= trepo.updateTrekkDataById(trekk.getId(), trekk.getTrekkName(),trekk.getTrekkingPoint(),trekk.getCity(),trekk.getPickupPoint(),trekk.getTrekkDate(),trekk.getCharges(),trekk.getImage());
-    //     if(rows == 0){
-    //         return -1;
-    //     }
-    //     else{
-    //         return rows;
-    //     }
+    //For MongoDB
+    // public Trekk getTrekk(String id){
+    //     return trepo.getTrekkById(id);
     // }
+
+  //  For MySQL - update method
+    public int updateTrekk(Trekk trekk){
+        int rows= trepo.updateTrekkDataById(trekk.getId(), trekk.getTrekkName(),trekk.getTrekkingPoint(),trekk.getCity(),trekk.getPickupPoint(),trekk.getTrekkDate(),trekk.getCharges(),trekk.getImage());
+        if(rows == 0){
+            return -1;
+        }
+        else{
+            return rows;
+        }
+    }
 
     
     //For MongoDB -update method
-    public void updateTrekkData(Trekk trekk) {
-        Optional<Trekk> optionalTrekk = trepo.findById(trekk.getId());
-        System.out.println("optional trekk"+optionalTrekk);
-        if (optionalTrekk.isPresent()) {
-            Trekk updatedtrekk = optionalTrekk.get();
-            updatedtrekk.setTrekkName(trekk.getTrekkName());
-            updatedtrekk.setTrekkingPoint(trekk.getTrekkingPoint());
-            updatedtrekk.setCity(trekk.getCity());
-            updatedtrekk.setPickupPoint(trekk.getPickupPoint());
-            updatedtrekk.setTrekkDate(trekk.getTrekkDate());
-            updatedtrekk.setCharges(trekk.getCharges());
-            updatedtrekk.setImage(trekk.getImage());
-            trepo.save(updatedtrekk);
-        } 
-    }
+    // public void updateTrekkData(Trekk trekk) {
+    //     Optional<Trekk> optionalTrekk = trepo.findById(trekk.getId());
+    //     System.out.println("optional trekk"+optionalTrekk);
+    //     if (optionalTrekk.isPresent()) {
+    //         Trekk updatedtrekk = optionalTrekk.get();
+    //         updatedtrekk.setTrekkName(trekk.getTrekkName());
+    //         updatedtrekk.setTrekkingPoint(trekk.getTrekkingPoint());
+    //         updatedtrekk.setCity(trekk.getCity());
+    //         updatedtrekk.setPickupPoint(trekk.getPickupPoint());
+    //         updatedtrekk.setTrekkDate(trekk.getTrekkDate());
+    //         updatedtrekk.setCharges(trekk.getCharges());
+    //         updatedtrekk.setImage(trekk.getImage());
+    //         trepo.save(updatedtrekk);
+    //     } 
+    // }
     
 }

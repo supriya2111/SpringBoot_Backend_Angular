@@ -37,29 +37,29 @@ public class TrekkController {
         return tservice.getAllTrekk();
     }
 
-    // @DeleteMapping("/trekks/{id}")
-    // public void deleteTrekk(@PathVariable("id") int id)
-    // {
-    // 	tservice.deleteTrekk(id);
-    // } 
-
     @DeleteMapping("/trekks/{id}")
-    public void deleteTrekk(@PathVariable("id") String id)
+    public void deleteTrekk(@PathVariable("id") int id)
     {
     	tservice.deleteTrekk(id);
-    }
+    } 
 
-
-    // @GetMapping("/trekks/{id}")
-    // public Trekk getTrekk(@PathVariable int id) {
-    //    return tservice.getTrekk(id);
+    // @DeleteMapping("/trekks/{id}")
+    // public void deleteTrekk(@PathVariable("id") String id)
+    // {
+    // 	tservice.deleteTrekk(id);
     // }
-    
-   
+
+
     @GetMapping("/trekks/{id}")
-    public Trekk getTrekk(@PathVariable String id) {
+    public Trekk getTrekk(@PathVariable int id) {
        return tservice.getTrekk(id);
     }
+    
+   
+    // @GetMapping("/trekks/{id}")
+    // public Trekk getTrekk(@PathVariable String id) {
+    //    return tservice.getTrekk(id);
+    // }
     
     // @GetMapping("/trekks/update/{id}")
     // public Trekk getTrekkforUpdate(@PathVariable String id) {
@@ -69,8 +69,15 @@ public class TrekkController {
     @PutMapping("/trekks")
     public void  updateTrekk( @RequestBody Trekk trekk) {
         System.out.println(trekk);
-        tservice.updateTrekkData(trekk);
+        tservice.updateTrekk(trekk);
     }
+
+    // @PutMapping("/trekks")
+    // public void  updateTrekk( @RequestBody Trekk trekk) {
+    //     System.out.println(trekk);
+    //     tservice.updateTrekkData(trekk);
+    // }
+
 
     
 }

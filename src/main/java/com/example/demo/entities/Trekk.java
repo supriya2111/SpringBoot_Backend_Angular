@@ -13,18 +13,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-// @Entity
-// @Table(name="trekk")
+@Entity
+@Table(name="trekk")
 @Data
-@Document(collection ="trekk")
+//@Document(collection ="trekk")
 public class Trekk {
   
-   // @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
-   // int id;
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   int id;
 
-    @Id
-    String id;
+    // @Id
+    // String id;
 
     
     @Column
@@ -54,17 +54,17 @@ public class Trekk {
     }
 
     
-    // public Trekk(int id, String trekkName, String trekkingPoint, String city, String pickupPoint, Date trekkDate,
-    //         int charges, String image) {
-    //     this.id = id;
-    //     this.trekkName = trekkName;
-    //     this.trekkingPoint = trekkingPoint;
-    //     this.city = city;
-    //     this.pickupPoint = pickupPoint;
-    //     this.trekkDate = trekkDate;
-    //     this.charges = charges;
-    //     this.image = image;
-    // }
+    public Trekk(int id, String trekkName, String trekkingPoint, String city, String pickupPoint, Date trekkDate,
+            int charges, String image) {
+        this.id = id;
+        this.trekkName = trekkName;
+        this.trekkingPoint = trekkingPoint;
+        this.city = city;
+        this.pickupPoint = pickupPoint;
+        this.trekkDate = trekkDate;
+        this.charges = charges;
+        this.image = image;
+    }
 
     // public int getId() {
     //     return id;
